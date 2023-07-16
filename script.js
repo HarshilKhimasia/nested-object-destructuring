@@ -17,6 +17,10 @@ const restaurant = {
       close: '10 pm',
     },
   },
+
+  order({ customerName, mainIndex, open }) {                        // Destructuring object inside a function parameter
+    return `${customerName}, ordered ${mainIndex}, at ${open}`; 
+  },
 };
 
 const {
@@ -25,3 +29,11 @@ const {
   },
 } = restaurant;
 console.log(open, close);
+
+console.log(
+  restaurant.order({
+    customerName: 'Harshil',
+    mainIndex: 2,
+    open,
+  })
+);
